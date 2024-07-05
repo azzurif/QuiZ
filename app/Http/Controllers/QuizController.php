@@ -15,8 +15,14 @@ class QuizController extends Controller
      */
     public function index()
     {
+        $query = Quiz::query();
+
+        $query->when(request('s'), function ($query, $search) {
+            return $query->where('title', 'like', '%' . $search . '%');
+        });
+
         return Inertia::render('Quiz/Index', [
-            'quizzes' => Quiz::with('user')->get(),
+            'quizzes' => $query->with('user')->paginate(12)
         ]);
     }
 

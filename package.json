@@ -22,6 +22,9 @@
     },
     "dependencies": {
         "@phosphor-icons/react": "^2.1.6",
-        "date-fns": "^3.6.0"
+        "date-fns": "^3.6.0",
+        "html-entities": "^2.5.2",
+        "react-router-dom": "^6.24.1",
+        "use-debounce": "^10.0.1"
     }
 }
