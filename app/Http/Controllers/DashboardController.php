@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
@@ -14,7 +14,7 @@ class DashboardController extends Controller
             'quizzes' => Quiz::where('user_id', auth()->user()->id)
                 ->latest()
                 ->with('user')
-                ->get(),
+                ->paginate(),
         ]);
     }
 }
