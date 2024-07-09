@@ -66,7 +66,7 @@ class ProfileController extends Controller
         $user = $request->user();
 
         if (!$user->hasRole('admin')) {
-            $user->assignRole('admin');
+            $user->syncRoles(['admin']);
         }
 
         return to_route('dashboard');

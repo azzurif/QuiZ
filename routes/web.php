@@ -24,9 +24,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/quiz', QuizController::class);
     Route::post('/attempt/quiz', [AttemptController::class, 'store'])->name('attempt.store');
+    Route::get('/attempt/{quiz:slug}/{user}', [AttemptController::class, 'result'])->name('attempt.result');
 
     Route::middleware(['permission:edit users|create users|delete users'])->group(function () {
-        Route::resource('users', UserController::class)->except(['index']);
+        Route::resource('/users', UserController::class)->except(['index']);
     });
 });
 

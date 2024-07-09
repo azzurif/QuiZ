@@ -4,7 +4,6 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import Layout from "@/Layouts/Layout";
 import { useForm } from "@inertiajs/react";
-import React from "react";
 
 const Edit = ({ auth, user }) => {
     const { data, setData, put, errors, processing } = useForm({
@@ -54,21 +53,7 @@ const Edit = ({ auth, user }) => {
 
                     <InputError className="mt-2" message={errors.email} />
                 </div>
-                {/* password */}
-                <div>
-                    <InputLabel htmlFor="password" value="Password" />
-
-                    <TextInput
-                        id="password"
-                        className="mt-1 block w-full"
-                        value={data.password}
-                        onChange={(e) => setData("password", e.target.value)}
-                        type="password"
-                    />
-
-                    <InputError className="mt-2" message={errors.password} />
-                </div>
-                <PrimaryButton disabled={processing}>Edit User</PrimaryButton>
+                <PrimaryButton disabled={processing}>Save</PrimaryButton>
             </form>
         </Layout>
     );

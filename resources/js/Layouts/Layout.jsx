@@ -1,4 +1,4 @@
-import React from "react";
+;
 import Authenticated from "./AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 

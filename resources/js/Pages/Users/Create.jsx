@@ -4,7 +4,6 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import Layout from "@/Layouts/Layout";
 import { useForm } from "@inertiajs/react";
-import React from "react";
 
 const Create = ({ auth }) => {
     const { data, setData, post, errors, processing } = useForm({

@@ -27,7 +27,14 @@ const Show = ({ auth, quiz }) => {
         setData("score", data.score);
 
         e.preventDefault();
-        post(route("attempt.store"));
+        post(route("attempt.store"), {
+            onSuccess: () => {
+                window.location.href = route("attempt.result", {
+                    quiz: quiz.slug,
+                    user: auth.user.id,
+                });
+            },
+        });
     };
 
     return (

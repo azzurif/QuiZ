@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../../Layouts/Layout";
 import { Link, router } from "@inertiajs/react";
 import { PencilSimple, XCircle } from "@phosphor-icons/react";
@@ -18,7 +17,7 @@ const Index = ({ auth, users }) => {
                     Create User
                 </CreateButton>
             )}
-            <div className="grid grid-cols-2 w-full gap-4">
+            <div className="grid md:grid-cols-2 w-full gap-4">
                 {users.map((user) => (
                     <div
                         key={user.id}

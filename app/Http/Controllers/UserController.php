@@ -70,15 +70,10 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'max:255'],
             'email' => ['required', 'unique:users,email' . $user->id, 'email'],
-            'password' => ['nullable']
         ]);
 
         $user->name = $validatedData['name'];
         $user->email = $validatedData['email'];
-
-        if (!empty($validatedData['password'])) {
-            $user->password = $validatedData['password'];
-        }
 
         $user->save();
 

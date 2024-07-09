@@ -1,5 +1,4 @@
 import Layout from "@/Layouts/Layout";
-import React from "react";
 
 const Show = ({ auth, user }) => {
     return (

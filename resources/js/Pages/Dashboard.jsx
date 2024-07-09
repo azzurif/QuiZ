@@ -2,10 +2,9 @@ import CreateButton from "@/Components/CreateButton";
 import Header from "@/Components/Header";
 import Pagination from "@/Components/Pagination";
 import Card from "@/Components/Quiz/Card";
-import TextInput from "@/Components/TextInput";
 import Layout from "@/Layouts/Layout";
 
-export default function Dashboard({ auth, quizzes, datas }) {
+export default function Dashboard({ auth, quizzes }) {
     return (
         <Layout auth={auth.user} header="Dashboard" title="Dashboard">
             <div>

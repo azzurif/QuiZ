@@ -1,7 +1,6 @@
 import { Link, router } from "@inertiajs/react";
 import { PencilSimple, XCircle } from "@phosphor-icons/react";
 import { formatDistance } from "date-fns";
-import React from "react";
 
 const Card = ({ quizzes, show }) => {
     const deleteQuiz = (slug) => {
@@ -25,9 +24,9 @@ const Card = ({ quizzes, show }) => {
                                     {quiz.user.name}
                                 </Link>
                                 <p className="text-slate-400">
-                                    {`latest update:  `}
+                                    {`last update:  `}
                                     {formatDistance(
-                                        quiz.created_at,
+                                        quiz.updated_at,
                                         new Date(),
                                         { addSuffix: true }
                                     )}
