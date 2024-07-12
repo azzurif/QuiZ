@@ -25,6 +25,8 @@ class OauthController extends Controller
             'name' => $user->getName(),
         ]);
 
+        $incoming_user->assignRole('standard');
+
         Auth::login($incoming_user);
 
         return to_route('dashboard');
